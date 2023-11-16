@@ -19,3 +19,12 @@ add_executable(algo_solution algo_solution.cpp)
 
 add_executable(algo_functions algo_functions.cpp)
 add_executable(algo_functions_solution algo_functions_solution.cpp)
+
+add_executable(pack pack.cpp)
+add_executable(sizeof sizeof.cpp)
+
+add_compile_definitions(cold EXTSIZE=512)
+add_executable(cold cold.cpp)
+add_executable(aos aos.cpp)
+add_executable(aos_impr aos_impr.cpp)
+add_executable(soa soa.cpp)
