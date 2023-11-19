@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(cshep VERSION 0.1.0)
 
-find_package(TBB REQUIRED)
+#find_package(TBB REQUIRED)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -23,7 +23,7 @@ add_executable(algo_functions_solution algo_functions_solution.cpp)
 add_executable(pack pack.cpp)
 add_executable(sizeof sizeof.cpp)
 
-add_compile_definitions(cold EXTSIZE=512)
+add_compile_definitions(EXTSIZE=512)
 add_executable(cold cold.cpp)
 add_executable(aos aos.cpp)
 add_executable(aos_impr aos_impr.cpp)
