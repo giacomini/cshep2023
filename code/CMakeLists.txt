@@ -14,17 +14,26 @@ string(APPEND CMAKE_CXX_FLAGS_DEBUG
 string(APPEND CMAKE_EXE_LINKER_FLAGS_DEBUG
        " -fsanitize=address -fno-omit-frame-pointer")
 
-add_executable(algo algo.cpp)
-add_executable(algo_solution algo_solution.cpp)
+#add_executable(algo algo.cpp)
+#add_executable(algo_solution algo_solution.cpp)
 
-add_executable(algo_functions algo_functions.cpp)
-add_executable(algo_functions_solution algo_functions_solution.cpp)
+#add_executable(algo_functions algo_functions.cpp)
+#add_executable(algo_functions_solution algo_functions_solution.cpp)
 
-add_executable(pack pack.cpp)
-add_executable(sizeof sizeof.cpp)
+#add_executable(pack pack.cpp)
+#add_executable(sizeof sizeof.cpp)
 
-add_compile_definitions(EXTSIZE=512)
-add_executable(cold cold.cpp)
-add_executable(aos aos.cpp)
-add_executable(aos_impr aos_impr.cpp)
-add_executable(soa soa.cpp)
+#add_compile_definitions(EXTSIZE=256)
+#add_executable(cold cold.cpp)
+#add_executable(aos aos.cpp)
+#add_executable(aos_impr aos_impr.cpp)
+#add_executable(soa soa.cpp)
+
+add_executable(race race.cpp)
+add_executable(race_solution race_solution.cpp)
+
+add_executable(false_sharing false_sharing.cpp)
+add_executable(false_sharing_solution false_sharing_solution.cpp)
+
+add_executable(privatization privatization.cpp)
+add_executable(privatization_solution privatization_solution.cpp)
