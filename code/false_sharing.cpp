@@ -44,13 +44,17 @@ int main()
   auto t0 = std::chrono::system_clock::now();
 
   {
-    std::vector<std::jthread> vth;
+    std::vector<std::thread> vth;
     vth.reserve(4);
 
     vth.emplace_back([s = std::span<double>{it0, it1}] { f(s); });
     vth.emplace_back([s = std::span<double>{it1, it2}] { f(s); });
     vth.emplace_back([s = std::span<double>{it2, it3}] { f(s); });
     vth.emplace_back([s = std::span<double>{it3, it4}] { f(s); });
+
+    for (auto& t : vth) {
+      t.join();
+    }
   }
 
   auto t1 = std::chrono::system_clock::now();

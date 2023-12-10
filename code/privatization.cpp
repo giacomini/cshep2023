@@ -40,13 +40,17 @@ int main()
   std::atomic<int> count{0};
 
   auto bench = benchmark([&] {
-    std::vector<std::jthread> vth;
+    std::vector<std::thread> vth;
     vth.reserve(2);
 
     vth.emplace_back(
         [&, s = std::span{v.begin(), mid_it}] { count_5s(s, count); });
     vth.emplace_back(
         [&, s = std::span{mid_it, v.end()}] { count_5s(s, count); });
+
+    for (auto& t : vth) {
+      t.join();
+    }
   });
 
   std::cout << "#5 " << count << " in " << bench.count() << " s\n";
